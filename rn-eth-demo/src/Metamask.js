@@ -29,7 +29,7 @@ class Metamask extends Component {
     const tokenBalance = await daiContract.balanceOf(accounts[0]);
     const tokenUnits = await daiContract.decimals();
     const tokenBalanceInEther = ethers.utils.formatUnits(tokenBalance, tokenUnits);
- 
+
     this.setState({ selectedAddress: accounts[0], balance: balanceInEther, block, tokenName, tokenBalanceInEther })
   }
 
@@ -54,10 +54,10 @@ class Metamask extends Component {
     const nftContract = new ethers.Contract('0xb1e52d0b4f65fa7034748fb6ae2a6472e942b135', CNFT_ABI, provider);
 
     const nftContractWithSigner = nftContract.connect(signer);
-    nftContractWithSigner.safeMint(tokenURL); 
+    nftContractWithSigner.safeMint(tokenURL);
   }
 
-
+  
 
   renderMetamask() {
     if (!this.state.selectedAddress) {
@@ -79,7 +79,7 @@ class Metamask extends Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         {this.renderMetamask()}
       </div>
