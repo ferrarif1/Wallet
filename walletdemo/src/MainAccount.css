@@ -1,0 +1,118 @@
+
+.MainAccount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  background: rgb(241, 241, 241, 0.2);
+  margin-top: -35px;
+}
+
+.MainAccount-header{
+  background: white;
+  width: 57%;
+  padding: 12px 20px 12px 20px; /* TRBL */
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-shadow: rgba(9, 30, 66, 0.4) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.MainAccount-body {
+  width: 57%;
+  background: white;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  word-break:break-all;
+  box-shadow: rgba(9, 30, 66, 0.4) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.AccountInformation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.AccountInformation img {
+  border-radius: 100%;
+  border: 0.5px solid rgba(0, 0, 0, 0.15);
+  width: 45px;
+  height: 45px;
+}
+
+.Action-buttons {
+  padding-bottom: 5px;
+}
+
+.Event-messages {
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 15px 10px 0px 20px;
+}
+
+.Event-messages span {
+  color: #037dd6;
+  font-weight: bold;
+}
+
+.AccountHistory {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.AccountHistory-title{
+  padding: 15px 50px 15px 40px;
+  color: #037dd6;
+  font-weight: bold;
+}
+
+.AccountHistory-transactions {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 50px 15px 40px;
+}
+
+.AccountHistory-transactions .upper-layer {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.AccountHistory-transactions .lower-layer {
+  border-bottom: 0.9px solid rgb(41,40,47, 0.2);
+}
+
+.Balance-eth {
+  font-size: 30px;
+}
+
+.Balance-usd {
+  font-size: 16px;
+  color: rgb(41,40,47, 0.6);
+}
+
+.Key-info {
+  padding: 20px 50px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-group {
+  display: flex;
+  align-items: flex-end;
+  margin: 5px;
+  display: none;
+}
+
+.input-group input {
+  padding: 5px;
+  margin: 5px;
+  height: 35px;
+  margin-bottom: 0;
+}
+
+.input-group input:focus {
+  outline: none;
+}
