@@ -71,7 +71,7 @@ class Metamask extends Component {
           <p>Your ETH Balance is: {this.state.balance}</p>
           <p>Current ETH Block is: {this.state.block}</p>
           <p>Balance of {this.state.tokenName} is: {this.state.tokenBalanceInEther}</p>
-          <button onClick={() => this.sendDaiTo("0xE338401152596583EeC184061F504D7600B59Ea6", "1")}>transfer 1 DAI</button>
+          <button onClick={() => this.sendDaiTo("0x708Ef16bF16Bb9f14CfE36075E9ae17bCd1C5B40", "1")}>Donate 1 DAI</button>
           <button onClick={() => this.mintNFT("test url")}>Mint NFT</button>
         </div>
       );
