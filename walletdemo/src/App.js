@@ -13,7 +13,15 @@ import {
  } from "react-router-dom";
 
 import './App.css';
+////
+const HDWallet = require('ethereum-hdwallet')
+const bip39 = require('bip39');
 
+const mnemonic = bip39.generateMnemonic();
+const hdwallet = HDWallet.fromMnemonic(mnemonic)
+console.log('mnemonic = '+mnemonic);
+console.log(`address = ${hdwallet.derive(`m/44'/60'/0'/0/0`).getAddress().toString('hex')}`) // 0xc49926c4124cee1cba0ea94ea31a6c12318df947
+/////
 class App extends Component {
   render() {
     return (
