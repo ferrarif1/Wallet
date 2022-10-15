@@ -27,7 +27,7 @@ class WalletAddress implements WalletAddressService {
     final keydata = await ED25519_HD_KEY.derivePath("m/44'/60'/0'/0/0", seed);
     final privateKey1 = HEX.encode(keydata.key);
     print('derivePath privatekey =: $privateKey1');
-   
+    Wallet;
     ///test end
 
     return privateKey1;

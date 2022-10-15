@@ -47,6 +47,6 @@ class WalletAddress implements WalletAddressService {
     return address;
   }
 
-
+  
   
 }
