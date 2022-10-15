@@ -1,14 +1,19 @@
 import 'dart:developer';
 
+
 import 'package:wallet/common/layout.dart';
 import 'package:wallet/common/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wallet/pages/backup_wallet.dart';
 import 'package:wallet/utils/mnemonic.dart';
-import 'package:web3dart/web3dart.dart';
 import '../controller/global_theme_controller.dart';
-import './wallet_creation.dart';//test2
+
+import 'package:web3dart/web3dart.dart';
+import 'dart:convert';
+import 'package:convert/convert.dart';
+import 'package:dart_bip32_bip44/dart_bip32_bip44.dart';
+import 'package:bip39/bip39.dart' as bip39;
 
 class CreateWalletPage extends StatelessWidget {
   const CreateWalletPage({super.key});
@@ -71,19 +76,16 @@ class CreateWalletPage extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: () async{
+              onPressed: () async {
                 final mnemonic = generateMnemonic();
-                // Get.to(const BackupWalletPage(), arguments: mnemonic);
                 //test2
+                String seed = bip39.mnemonicToSeedHex(mnemonic);
+                Chain chain = Chain.seed(seed);  
+                ExtendedKey exkey = chain.forPath("m/44'/60'/0'/0/0");
+                Credentials credentials = EthPrivateKey.fromHex(exkey.privateKeyHex()); //web3dart
+                var address = await credentials.extractAddress(); //web3dart
               
-                WalletAddress service = WalletAddress();
-                final mnemonic = service.generateMnemonic();
-                final privateKey = await service.getPrivateKey(mnemonic);
-                final address = await service.getPublicKey(privateKey.toString());
-                
-                Get.to(const BackupWalletPage(), arguments:mnemonic+privateKey+address.hexEip55);
-                
-                
+                Get.to(const BackupWalletPage(), arguments: mnemonic+address.toString());
               },
               style: ButtonStyle(
                   foregroundColor: MaterialStateProperty.all(theme.textColor1),
