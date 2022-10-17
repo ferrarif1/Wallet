@@ -1,4 +1,4 @@
-import {uglify} from "rollup-plugin-uglify";
+import {uglify} from "rollup-plugin-terser";
 
 export default {
   input: './suiport.js',
@@ -7,6 +7,6 @@ export default {
     format: 'iife'
   },
   plugins: [
-    uglify()
+    terser()
   ]
 };
