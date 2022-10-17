@@ -79,13 +79,13 @@ class CreateWalletPage extends StatelessWidget {
               onPressed: () async {
                 final mnemonic = generateMnemonic();
                 //test2
-                String seed = bip39.mnemonicToSeedHex(mnemonic);
-                Chain chain = Chain.seed(seed);  
-                ExtendedKey exkey = chain.forPath("m/44'/60'/0'/0/0");
-                Credentials credentials = EthPrivateKey.fromHex(exkey.privateKeyHex()); //web3dart
-                var address = await credentials.extractAddress(); //web3dart
-              
-                Get.to(const BackupWalletPage(), arguments: mnemonic+address.toString());
+                // String seed = bip39.mnemonicToSeedHex(mnemonic);
+                // Chain chain = Chain.seed(seed);  
+                // ExtendedKey exkey = chain.forPath("m/44'/60'/0'/0/0");
+                // Credentials credentials = EthPrivateKey.fromHex(exkey.privateKeyHex()); //web3dart
+                // var address = await credentials.extractAddress(); //web3dart
+                
+                Get.to(const BackupWalletPage(), arguments: mnemonic);
               },
               style: ButtonStyle(
                   foregroundColor: MaterialStateProperty.all(theme.textColor1),
