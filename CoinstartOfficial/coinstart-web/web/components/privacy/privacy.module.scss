@@ -1,0 +1,78 @@
+.p-privacy {
+  background: url("../../public/icon-bg.svg") no-repeat top center;
+  margin: auto;
+}
+
+$k: 0.005;
+
+.p-privacy-h1 {
+  font-family: SourceHanSansCN-Bold;
+  // font-size: 40px;
+  font-size: ($k*40rem);
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  padding: ($k * 80rem) 0;
+}
+
+.p-privacy-h2 {
+  font-family: Inter-Medium;
+  font-size: ($k*34rem);
+  font-weight: 500;
+  line-height: 38px;
+  margin-bottom: ($k * 15rem);
+  color: #9561D8;
+}
+
+.p-privacy-section {
+  font-family: Inter-Medium;
+  font-size: ($k*30rem);
+  font-weight: 500;
+  line-height: 38px;
+  color: #FFFFFF;
+  margin: 0 0 ($k * 25rem) !important;
+}
+
+.p-privacy-txt {
+  font-family: Inter-Medium;
+  font-size: ($k*30rem);
+  font-weight: 500;
+  line-height: 38px;
+  color: #FFFFFF;
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .p-privacy {
+    width: 1190px;
+    margin-bottom: ($k * -160rem);
+  }
+
+  .p-privacy-h1 {
+    font-size: ($k*16rem);
+    padding: ($k * 40rem) 0;
+  }
+
+  .p-privacy-h2 {
+    font-size: ($k*14rem);
+    margin-bottom: ($k * 12rem);
+  }
+
+  .p-privacy-section {
+    font-size: ($k * 10rem);
+    margin: 0 0 ($k * 18rem) !important;
+    width: 1190px !important;
+  }
+} 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .p-privacy {
+    padding: 0 .25rem;
+  }
+} 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .p-privacy {
+    padding: 0 .25rem;
+  }
+}
